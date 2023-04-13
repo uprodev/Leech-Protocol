@@ -1,0 +1,211 @@
+.block-logos {
+  position: relative;
+
+  .container-fluid {
+    position: relative;
+    z-index: 1;
+  }
+
+  h2 {
+    border-bottom: 1px solid var(--theme-rgba);
+    padding: 0 0 30px;
+    margin: 0 0 40px;
+  }
+
+  .wrapper {
+    padding: 0 44px;
+  }
+
+  .row {
+    --bs-gutter-x: 33px;
+    --bs-gutter-y: 37px;
+  }
+
+  .btn-more {
+    margin-top: 62px;
+  }
+
+  &--col-4,
+  &--col-4-1 {
+    padding: 77px 0 67px;
+  }
+
+  &--col-6 {
+    padding: 77px 0 54px;
+  }
+
+  @include media-breakpoint-down(md) {
+    .row {
+      & > div {
+        display: none;
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .btn-more {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .container-fluid {
+      position: relative;
+      padding-bottom: 80px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--bs-gutter-x);
+        right: var(--bs-gutter-x);
+        height: 1px;
+        background-color: var(--theme-rgba);
+      }
+    }
+
+    &--col-4,
+    &--col-4-1,
+    &--col-6 {
+      padding: 80px 0 0;
+      margin: 0 0 80px;
+    }
+
+    h2 {
+      border-bottom: none;
+      padding: 0 0 30px;
+      margin: 0 0 40px;
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 468px;
+        height: 1px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: var(--theme-rgba);
+      }
+    }
+
+    .wrapper {
+      padding: 0;
+    }
+
+    .row {
+      --bs-gutter-x: 60px;
+      --bs-gutter-y: 60px;
+    }
+
+    &--col-4-1 {
+      .card-logo {
+        figure {
+          margin: 0 0 30px;
+        }
+
+        span {
+          font-size: 16px;
+          display: inline-flex;
+          opacity: 0;
+          transition: opacity 0.2s;
+
+          &:after {
+            width: 12px;
+            height: 12px;
+            margin-left: 20px;
+          }
+        }
+
+        &:hover {
+          span {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    h2 {
+      margin: 0 0 60px;
+      padding: 0 0 24px;
+    }
+
+    &--col-4 {
+      padding: 168px 0 0;
+      margin: 0 0 94px;
+
+      .container-fluid {
+        padding-bottom: 102px;
+      }
+
+      .row {
+        --bs-gutter-x: 149px;
+        --bs-gutter-y: 99px;
+      }
+
+      .card-logo {
+        figure {
+          margin: 0 0 70px;
+        }
+
+        span {
+          &:after {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+
+    &--col-4-1 {
+      padding: 168px 0 0;
+      margin: 0;
+
+      .container-fluid {
+        padding-bottom: 60px;
+      }
+
+      h2 {
+        padding: 0 0 30px;
+      }
+
+      .row {
+        --bs-gutter-x: 130px;
+        --bs-gutter-y: 40px;
+      }
+    }
+
+    &--col-6 {
+      padding: 168px 0 0;
+
+      .container-fluid {
+        padding-bottom: 97px;
+      }
+
+      .row {
+        --bs-gutter-x: 95px;
+        --bs-gutter-y: 56px;
+      }
+
+      h2 {
+        padding: 0 0 32px;
+      }
+
+      .card-logo {
+        figure {
+          margin: 0 0 44px;
+        }
+      }
+    }
+  }
+}

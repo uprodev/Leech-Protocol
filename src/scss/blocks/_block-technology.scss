@@ -1,0 +1,240 @@
+.block-technology {
+  padding: 60px 0 0;
+  position: relative;
+
+  .container-fluid {
+    position: relative;
+    z-index: 1;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    margin: 0 0 12px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.375;
+    opacity: 0.8;
+    text-align: center;
+    margin: 0;
+  }
+
+  .animation-mobile {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+
+    .coins-01 {
+      position: absolute;
+      left: 48.5%;
+      top: 22vw;
+      width: 50%;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
+    .coins-02 {
+      position: absolute;
+      left: 50%;
+      bottom: 50vw;
+      width: 50%;
+      height: auto;
+      transform: translateX(-50%);
+    }
+
+    .btn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+
+      img {
+        margin-left: 15px;
+      }
+    }
+
+    @media (min-width: 432px) {
+      .coins-01 {
+        top: 110px;
+      }
+      .coins-02 {
+        bottom: 220px;
+      }
+    }
+  }
+
+  .animation-desktop {
+    position: relative;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .coins-01 {
+      position: absolute;
+      left: 2.5%;
+      top: 17%;
+    }
+    .coins-02 {
+      position: absolute;
+      right: 7%;
+      top: 14%;
+    }
+
+    .btn {
+      position: absolute;
+      left: 0;
+      bottom: 35%;
+      width: 16.5%;
+      padding: 0;
+
+      img {
+        margin-left: 10px;
+      }
+    }
+
+    &.coins-bottom {
+      .coins-02 {
+        top: 40%;
+      }
+    }
+  }
+
+  .image {
+    margin: 0 calc(var(--bs-gutter-x) * -1);
+    padding: 0 3.5px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    h2 {
+      font-size: 32px;
+      margin: 0 0 31px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.333;
+      margin: 0 0 4px;
+
+      br {
+        display: none;
+      }
+    }
+
+    .image {
+      margin: -73px -50px 0 0;
+      padding: 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 149px 0 106px;
+
+    .animation-desktop {
+      margin: 0 -50px 0 0;
+
+      .btn {
+        bottom: 38%;
+      }
+    }
+  }
+}
+
+.tech-svg {
+  width: 100%;
+  height: auto;
+}
+
+.t-box-01,
+.t-box-02,
+.t-box-03,
+.t-box-04,
+.t-box-05,
+.t-box-06,
+.t-box-07 {
+  opacity: 0;
+}
+
+.t-box-01-connect,
+.t-box-02-connect,
+.t-box-03-connect,
+.t-box-05-connect,
+.t-box-06-connect {
+  path:not(.line) {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+  }
+  circle {
+    opacity: 0;
+  }
+  .line {
+    opacity: 0;
+  }
+}
+
+.t-box-04-connect {
+  path {
+    opacity: 0;
+  }
+  circle {
+    opacity: 0;
+  }
+}
+
+.t-box-change,
+.t-box-change-d {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.t-box-trigger,
+.t-box-trigger-d {
+  cursor: pointer;
+  path {
+    fill: $primary;
+  }
+
+  &.active {
+    path {
+      fill: $white;
+    }
+  }
+}
+
+.t-box-01-d,
+.t-box-trigger-wrapper,
+.t-box-02-d,
+.t-box-03-d {
+  opacity: 0;
+}
+
+.t-box-connect-01,
+.t-box-connect-03 {
+  .c-left,
+  .c-right {
+    opacity: 0;
+  }
+  .line {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+  }
+}
+
+.t-box-connect-02 {
+  opacity: 0;
+}

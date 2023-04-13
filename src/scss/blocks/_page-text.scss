@@ -1,0 +1,232 @@
+.text-page {
+  padding: 0 0 42px;
+  position: relative;
+
+  .backgrounds {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 180px);
+    overflow: hidden;
+  }
+
+  .container-fluid {
+    position: relative;
+  }
+
+  .text-page-header {
+    padding: 95px 0 85px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    h1 {
+      color: var(--highlight-color);
+      margin: 0 0 31px;
+      min-height: 54px;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.5;
+      opacity: 0.8;
+      min-height: 52px;
+    }
+
+    .image {
+      position: absolute;
+      top: -62px;
+      bottom: -10px;
+      right: -47px;
+      width: 156px;
+
+      img {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  .text-page-content {
+    h2 {
+      color: var(--highlight-color);
+      margin: 0 0 30px;
+      font-weight: 400;
+    }
+  }
+
+  .tabs-nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 0 0 30px;
+      }
+
+      a {
+        background: none;
+        border: 1px solid #313131;
+        border-radius: 25px;
+        height: 40px;
+        padding: 0 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $ff-modernist;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: var(--highlight-color);
+
+        &.active,
+        &:hover {
+          border-color: var(--highlight-color);
+          background-color: var(--highlight-color);
+          color: $black;
+        }
+      }
+    }
+  }
+
+  .accordion {
+    .accordion-header {
+      text-align: center;
+      margin: 0 0 29px;
+
+      button {
+        background: none;
+        border: 1px solid #313131;
+        border-radius: 25px;
+        height: 38px;
+        padding: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $ff-modernist;
+        font-weight: 700;
+        font-size: 13.4381px;
+        line-height: 16px;
+        color: var(--highlight-color);
+
+        &.active,
+        &:hover {
+          border-color: var(--highlight-color);
+          background-color: var(--highlight-color);
+          color: $black;
+        }
+      }
+    }
+
+    .accordion-body {
+      padding: 11px 0 48px;
+      display: none;
+      font-weight: 400;
+
+      p {
+        line-height: 1.86;
+        margin-bottom: 1.86em;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .text-page-header {
+      padding: 150px 0;
+      margin: 0 0 -100px;
+
+      .image {
+        top: -150px;
+        bottom: -150px;
+        right: 0;
+        width: auto;
+        transform: translateX(40%);
+      }
+
+      h1,
+      p {
+        min-height: 0;
+      }
+    }
+
+    .backgrounds {
+      height: calc(100% + 126px);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .text-page-header {
+      padding: 237px 0 250px;
+      margin: 0 0 -109px;
+
+      h1 {
+        margin: 0 0 8px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+
+      .image {
+        top: -160px;
+        bottom: -250px;
+        right: 0;
+        width: 357px;
+        transform: translateX(26%);
+      }
+    }
+
+    .text-page-content {
+      h2 {
+        font-size: 30px;
+        line-height: 35px;
+        margin: 0 0 25px;
+      }
+
+      .sticky-wrapper {
+        display: flex;
+        align-items: flex-start;
+
+        &:after {
+          content: "";
+          width: 1px;
+          height: 100%;
+        }
+      }
+
+      .sticky {
+        position: sticky;
+        top: 50px;
+      }
+    }
+
+    .accordion {
+      .accordion-header {
+        display: none;
+      }
+
+      .accordion-body {
+        padding: 0;
+
+        p {
+          font-size: 18px;
+          line-height: 1.667;
+          margin-bottom: 1.667em;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .backgrounds {
+      height: calc(100% + 206px);
+    }
+  }
+}

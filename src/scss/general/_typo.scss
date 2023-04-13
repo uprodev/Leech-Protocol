@@ -1,0 +1,60 @@
+body {
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 400;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: $font-family-base;
+}
+
+h1,
+.h1 {
+  font-family: $ff-azeret;
+  font-weight: 800;
+  font-size: 23px;
+  line-height: 27px;
+  margin: 0;
+
+  span {
+    color: var(--highlight-color);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}
+
+h2,
+.h2 {
+  font-family: $ff-azeret;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  margin: 0;
+
+  span {
+    color: var(--highlight-color);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 32px;
+    line-height: 37px;
+  }
+}
+
+h3,
+.h3 {
+  @include media-breakpoint-up(lg) {
+  }
+}
+
+p {
+  margin: 0 0 2em;
+}

@@ -1,0 +1,171 @@
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 73px;
+
+  .item {
+    .item-image {
+      a {
+        display: block;
+        position: relative;
+        padding: 90.3% 0 0;
+
+        img {
+          @include img-abs;
+        }
+      }
+    }
+
+    .item-text {
+      padding: 7px 0 0;
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 0 28px;
+        color: var(--highlight-color);
+        font-family: $ff-azeret;
+        font-size: 14px;
+        line-height: 16px;
+
+        a {
+          display: block;
+          margin: 0 22px 0 0;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 38px;
+        margin: 0 0 14px;
+
+        em {
+          font-style: normal;
+          font-weight: inherit;
+          color: var(--highlight-color);
+        }
+      }
+
+      p {
+        line-height: 1.86;
+        margin: 0 0 26px;
+      }
+
+      .item-author {
+        display: flex;
+        align-items: center;
+
+        .item-author-image {
+          flex: 0 0 auto;
+          width: 41px;
+          height: 41px;
+          margin: 0 15px 0 0;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+          }
+        }
+
+        .item-author-info {
+          opacity: 0.8;
+
+          p {
+            margin: 0 0 4px;
+            line-height: 1.36;
+          }
+          span {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.385;
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    padding: 5px 0 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    row-gap: 30px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      column-gap: 5.14vw;
+      border-bottom: 1px solid var(--theme-rgba);
+      padding: 0 0 27px;
+
+      &:last-of-type {
+        border: none;
+      }
+
+      .item-image {
+        flex: 0 0 auto;
+        width: 33.3%;
+        a {
+          padding: 104.7% 0 0;
+        }
+      }
+
+      .item-text {
+        padding: 0;
+
+        .tags {
+          a {
+          }
+        }
+
+        h3 {
+          position: relative;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: -5.14vw;
+            top: 0.68em;
+            right: 0;
+            height: 1px;
+            background-color: var(--theme-rgba);
+          }
+        }
+
+        p {
+          line-height: 1.62;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .item {
+      width: 83%;
+      margin: auto;
+
+      .item-text {
+        h3 {
+          margin: 0 0 6px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .pagination {
+      padding: 45px 34px 0 0;
+    }
+  }
+}

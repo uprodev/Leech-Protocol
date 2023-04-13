@@ -1,0 +1,140 @@
+.block-text-image-wrapper {
+  padding: 82px 0 0;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+}
+
+.block-text-image {
+  padding: 23px 0 0;
+  position: relative;
+
+  .image {
+    margin: 0;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .text {
+    border-bottom: 1px solid var(--theme-rgba);
+    padding: 0 0 56px;
+
+    h2 {
+      border-bottom: 1px solid var(--theme-rgba);
+      padding: 0 0 32px;
+      margin: 0 0 32px;
+    }
+
+    p {
+      line-height: 1.86;
+      opacity: 0.8;
+      margin: 0 0 1.86em;
+      letter-spacing: 0.1px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &:first-child {
+    .image,
+    .animation-box {
+      margin: 0 0 73px;
+    }
+  }
+
+  &:nth-child(2) {
+    .text {
+      border-bottom: none;
+      padding: 0 0 51px;
+    }
+    .animation-box {
+      margin: 28px 0 11px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    border-bottom: 1px solid var(--theme-rgba);
+    padding: 80px 0;
+
+    &:nth-child(2) {
+      border: none;
+    }
+
+    .row {
+      align-items: center;
+    }
+
+    .text {
+      padding: 0;
+      border: none;
+    }
+
+    &--img-left {
+      .row {
+        flex-direction: row;
+      }
+    }
+    &--img-right {
+      .row {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 80px 0 149px;
+
+    &:nth-child(2) {
+      padding: 80px 0 149px;
+    }
+
+    .text {
+      h2 {
+        border-bottom: none;
+        position: relative;
+        max-width: 530px;
+
+        &:after {
+          content: "";
+          width: 468px;
+          height: 1px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: var(--theme-rgba);
+        }
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 2;
+        margin: 0 0 2em;
+        letter-spacing: 0;
+        max-width: 480px;
+      }
+    }
+
+    &:first-child {
+      .image,
+      .animation-box {
+        margin: 0 132px 0 13px;
+      }
+    }
+
+    &:nth-child(2) {
+      padding: 185px 0 113px;
+
+      .animation-box {
+        margin: 0 75px 0 30px;
+      }
+    }
+  }
+}

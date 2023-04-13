@@ -1,0 +1,42 @@
+.breadcrumbs {
+  display: none;
+  font-family: $ff-azeret;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 36px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    li {
+      a,
+      span {
+        opacity: 0.8;
+      }
+
+      & + li {
+        margin-left: 9px;
+        padding-left: 43px;
+        position: relative;
+
+        &:before {
+          content: "";
+          width: 34px;
+          height: 1px;
+          background-color: var(--highlight-color);
+          position: absolute;
+          left: 0;
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}

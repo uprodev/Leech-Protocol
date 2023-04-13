@@ -1,0 +1,31 @@
+.pagination {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      a,
+      span {
+        display: block;
+        width: 74px;
+        text-align: center;
+        font-family: $ff-azeret;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: var(--highlight-color);
+      }
+
+      a {
+        opacity: 0.5;
+      }
+      span {
+        font-size: 26px;
+      }
+    }
+  }
+}

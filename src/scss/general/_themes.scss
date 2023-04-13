@@ -1,0 +1,139 @@
+body {
+  --body-bg: #{$black};
+  background-color: var(--body-bg);
+}
+
+.theme-dark {
+  --theme-color: #{$white};
+  --theme-contrast: #{$black};
+  --highlight-color: #{$primary};
+  --theme-rgba: rgba(255, 255, 255, 0.1);
+
+  background-color: $black;
+  color: var(--theme-color);
+
+  .header,
+  .main-navigation {
+    background-color: $black;
+  }
+
+  .socials,
+  .article-share {
+    .ico-theme-light {
+      display: none;
+    }
+  }
+
+  .bg-red,
+  .bg-green {
+    opacity: 0.2;
+  }
+}
+
+.theme-light {
+  --theme-color: #{$black};
+  --theme-contrast: #{$white};
+  --highlight-color: #{$primary-light};
+  --theme-rgba: rgba(0, 0, 0, 0.1);
+
+  background-color: $white;
+  color: var(--theme-color);
+
+  .header,
+  .main-navigation {
+    background-color: $white;
+  }
+
+  .header {
+    .theme-switch {
+      a {
+        &.active {
+          background-color: transparent;
+          border-color: rgba(0, 0, 0, 0.1);
+
+          &:first-child {
+            svg {
+              path {
+                fill: $primary-light;
+              }
+            }
+          }
+          &:last-child {
+            svg {
+              path {
+                stroke: $primary-light;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &:first-child:hover {
+          svg {
+            path {
+              fill: $primary-light;
+            }
+          }
+        }
+        &:last-child:hover {
+          svg {
+            path {
+              stroke: $primary-light;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .socials,
+  .article-share {
+    .ico-theme-dark {
+      display: none;
+    }
+  }
+
+  .block-join {
+    .contact-form {
+      input,
+      textarea {
+        background-color: #e6e6e6;
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .field-radio label span {
+        color: $black;
+      }
+    }
+  }
+
+  .btn-more {
+    color: var(--theme-color);
+
+    span {
+      border-color: var(--theme-color);
+    }
+
+    svg path {
+      fill: var(--theme-color);
+    }
+  }
+
+  .block-roadmap .roadmap-step .roadmap-step-description ul {
+    color: $black;
+  }
+
+  .related .related-slider .swiper-button-next,
+  .related .related-slider .swiper-button-prev {
+    background-image: url(../img/icons/ico-arrow-slider-dark.svg);
+  }
+
+  .btn {
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.card-logo {
+  a {
+    display: block;
+
+    &:hover {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+
+  figure {
+    margin: 0 0 29px;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.3971px;
+    line-height: 31px;
+    opacity: 0.8;
+    transition: all 0.2s;
+
+    &:after {
+      content: "";
+      background: url(../img/icons/ico-arrow-card.svg) no-repeat;
+      display: block;
+      width: 11px;
+      height: 10px;
+      margin-left: 13px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    span {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      line-height: 1;
+
+      &:after {
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        background-size: cover;
+      }
+    }
+  }
+}
