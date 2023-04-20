@@ -49,11 +49,11 @@
 }
 
 @mixin bgRed() {
-  background: radial-gradient(ellipse at center, $red 0%, rgba($red, 0) 75%, rgba($red, 0) 100%);
+  background: radial-gradient(ellipse at center, $red 0%, rgba($red, 0) 70%, rgba($red, 0) 100%);
   width: 57vw;
   height: 143vw;
   position: absolute;
-  opacity: 0.13;
+  opacity: 0.1;
 
   @include media-breakpoint-up(md) {
     width: 57vw;
@@ -64,11 +64,11 @@
 }
 
 @mixin bgGreen() {
-  background: radial-gradient(ellipse at center, $green 0%, rgba($green, 0) 75%, rgba($green, 0) 100%);
+  background: radial-gradient(ellipse at center, $green 0%, rgba($green, 0) 70%, rgba($green, 0) 100%);
   width: 76vw;
   height: 191vw;
   position: absolute;
-  opacity: 0.13;
+  opacity: 0.1;
 
   @include media-breakpoint-up(md) {
     width: 76.1vw;
@@ -79,5 +79,5 @@
 }
 
 @mixin bgYellow() {
-  background: radial-gradient(ellipse at center, $yellow 0%, rgba($yellow, 0) 75%, rgba($yellow, 0) 100%);
+  background: radial-gradient(ellipse at center, $yellow 0%, rgba($yellow, 0) 70%, rgba($yellow, 0) 100%);
 }

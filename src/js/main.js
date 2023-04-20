@@ -50,42 +50,42 @@ jQuery(document).ready(function ($) {
     $(".block-roadmap").addClass("opened");
   });
 
-  $(".contact-form form").on("submit", function (e) {
-    e.preventDefault();
-    var err = false;
-    $(this)
-      .find("input, textarea")
-      .each(function () {
-        if ($(this).val() === "") {
-          $(this).addClass("error");
-          err = true;
-        } else {
-          $(this).removeClass("error");
-        }
-      });
-    if (!err) {
-      $(".contact-form").fadeOut(200);
-      $(".contact-form-success").fadeIn(200);
-    }
-  });
+  // $(".contact-form form").on("submit", function (e) {
+  //   e.preventDefault();
+  //   var err = false;
+  //   $(this)
+  //     .find("input, textarea")
+  //     .each(function () {
+  //       if ($(this).val() === "") {
+  //         $(this).addClass("error");
+  //         err = true;
+  //       } else {
+  //         $(this).removeClass("error");
+  //       }
+  //     });
+  //   if (!err) {
+  //     $(".contact-form").fadeOut(200);
+  //     $(".contact-form-success").fadeIn(200);
+  //   }
+  // });
 
-  $(".blog-form form").on("submit", function (e) {
-    e.preventDefault();
-    var err = false;
-    $(this)
-      .find("input")
-      .each(function () {
-        if ($(this).val() === "") {
-          $(this).parent(".field").addClass("error");
-          err = true;
-        } else {
-          $(this).parent(".field").removeClass("error");
-        }
-      });
-    if (!err) {
-      $(".blog-form-success").addClass("active");
-    }
-  });
+  // $(".blog-form form").on("submit", function (e) {
+  //   e.preventDefault();
+  //   var err = false;
+  //   $(this)
+  //     .find("input")
+  //     .each(function () {
+  //       if ($(this).val() === "") {
+  //         $(this).parent(".field").addClass("error");
+  //         err = true;
+  //       } else {
+  //         $(this).parent(".field").removeClass("error");
+  //       }
+  //     });
+  //   if (!err) {
+  //     $(".blog-form-success").addClass("active");
+  //   }
+  // });
 
   $(".theme-switch a").on("click", function (e) {
     e.preventDefault();
@@ -97,8 +97,16 @@ jQuery(document).ready(function ($) {
       $(this).addClass("active");
       if (theme === "theme-dark") {
         $("body").get(0).style.setProperty("--body-bg", "#000");
+        document.querySelectorAll(".roadmap-step.active .roadmap-step-icon").forEach((el) => {
+          el.style.borderColor = "b9ff1f";
+          el.style.backgroundColor = "b9ff1f";
+        });
       } else {
         $("body").get(0).style.setProperty("--body-bg", "#fff");
+        document.querySelectorAll(".roadmap-step.active .roadmap-step-icon").forEach((el) => {
+          el.style.borderColor = "#84bf00";
+          el.style.backgroundColor = "#84bf00";
+        });
       }
     }
   });
@@ -157,6 +165,39 @@ jQuery(document).ready(function ($) {
       ScrollTrigger.refresh();
     }
   });
+
+  $(".article-read-more").on("click", function () {
+    var txt1 = "See more",
+      txt2 = "See less";
+    if ($(this).hasClass("active")) {
+      $(this).removeClass("active").find("span").text(txt1);
+      $(this).prev(".read-more-wrapper").find("*").slideUp(200);
+      ScrollTrigger.refresh();
+    } else {
+      $(this).addClass("active").find("span").text(txt2);
+      $(this).prev(".read-more-wrapper").find("*").slideDown(200);
+      ScrollTrigger.refresh();
+    }
+  });
+
+  $(".btn-play").on("click", function () {
+    var video = $(this).prev().get(0);
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+
+  $(".header .btn-wrapper")
+    .on("mouseenter", function () {
+      var tooltip = $('<div class="tooltip" />');
+      tooltip.text("Coming soon..");
+      $(this).append(tooltip);
+    })
+    .on("mouseleave", function () {
+      $(this).find(".tooltip").remove();
+    });
 
   function accordion() {
     if ($(window).width() < 1024) {

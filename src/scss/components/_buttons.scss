@@ -92,5 +92,12 @@ button {
   svg {
     display: block;
     margin-left: 20px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    svg {
+      transform: rotate(-90deg);
+    }
   }
 }

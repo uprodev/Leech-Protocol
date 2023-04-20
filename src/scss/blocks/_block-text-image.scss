@@ -43,6 +43,16 @@
     }
   }
 
+  .animation-box {
+    position: relative;
+
+    lottie-player {
+      &:nth-child(2) {
+        @include abs-center();
+      }
+    }
+  }
+
   &:first-child {
     .image,
     .animation-box {

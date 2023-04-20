@@ -112,9 +112,34 @@
 
   .btn-wrapper {
     margin: 0 13px 0 9px;
+    position: relative;
+    z-index: 2;
 
     .btn {
       display: flex;
+      pointer-events: none;
+    }
+
+    .tooltip {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--body-bg);
+      border: 1px solid var(--highlight-color);
+      border-radius: 35px;
+      height: 23px;
+      line-height: 21px;
+      padding: 0 11px;
+      font-weight: 400;
+      font-size: 13.8286px;
+      color: var(--highlight-color);
+      white-space: nowrap;
+
+      @include media-breakpoint-down(xl) {
+        left: auto;
+        right: 50%;
+      }
     }
   }
 

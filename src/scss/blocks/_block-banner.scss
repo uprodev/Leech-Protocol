@@ -30,6 +30,14 @@
 
   .animation-box {
     margin: 0 -12px 0 5px;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 408px;
+      height: auto;
+      margin: auto;
+    }
   }
 
   p {
@@ -41,10 +49,11 @@
 
   .socials {
     justify-content: space-between;
-    margin: 0 10px 72px;
+    margin: 0 10px;
   }
 
   .btn-wrapper {
+    padding-top: 72px;
     text-align: center;
   }
 
@@ -72,8 +81,12 @@
         font-size: 20px;
       }
 
+      .btn {
+        margin-right: 20px;
+      }
+
       .socials {
-        margin: 0 0 0 20px;
+        margin: 0;
         width: 100%;
       }
     }
@@ -86,8 +99,8 @@
     .text {
       padding: 126px 0 0;
 
-      .socials {
-        margin: 0 0 0 74px;
+      .btn {
+        margin-right: 74px;
       }
     }
   }

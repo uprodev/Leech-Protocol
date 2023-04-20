@@ -63,7 +63,8 @@
         }
       }
 
-      &.active {
+      &.active,
+      &:hover {
         svg {
           transform: rotate(-90deg);
         }

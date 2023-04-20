@@ -29,7 +29,7 @@
 
       svg {
         display: block;
-        transform: rotate(-90deg);
+        transition: all 0.2s;
         margin-left: 10px;
         path {
           transition: all 0.2s;
@@ -41,6 +41,7 @@
         color: var(--highlight-color);
 
         svg {
+          transform: rotate(-90deg);
           path {
             fill: var(--highlight-color);
           }
@@ -145,7 +146,8 @@
         }
       }
 
-      &.active {
+      &.active,
+      &:hover {
         svg {
           transform: rotate(-90deg);
         }

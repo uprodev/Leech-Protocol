@@ -1,4 +1,5 @@
-.block-cookies {
+.block-cookies,
+.cky-consent-container {
   position: fixed;
   left: 0;
   right: 0;
@@ -8,23 +9,64 @@
   border: 0.639751px solid rgba($white, 0.1);
   border-radius: 11.5155px;
   padding: 35px;
+  width: 100% !important;
+  max-width: none !important;
+
+  .cky-consent-bar {
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    .cky-banner-btn-close {
+      position: absolute;
+      border: none;
+      padding: 10px;
+      top: 10px;
+      right: 10px;
+
+      img {
+        display: block;
+        width: 16px;
+        height: auto;
+      }
+    }
+  }
 
   .btn-close {
     position: absolute;
-    background: none;
     border: none;
     padding: 10px;
     top: 10px;
     right: 10px;
+    background: none;
   }
 
-  h3 {
+  h3,
+  .cky-notice .cky-title {
     font-family: $font-family-base;
     font-weight: 500;
     font-size: 14.0745px;
     line-height: 18px;
     margin: 0 0 8px;
-    color: $primary;
+    color: $primary !important;
+    padding: 0;
+  }
+
+  .cky-notice-des {
+    padding: 0;
+
+    p {
+      color: $white !important;
+      font-size: 11.5155px;
+      line-height: 19px;
+      margin: 0 0 15px !important;
+
+      a {
+        color: $primary;
+      }
+    }
   }
 
   p {
@@ -38,12 +80,22 @@
     }
   }
 
-  .buttons {
+  .buttons,
+  .cky-notice-btn-wrapper {
     display: flex;
     align-items: center;
     column-gap: 10px;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-    .btn {
+    .cky-btn {
+      @extend .btn;
+      margin: 0;
+    }
+
+    .btn,
+    .cky-btn {
       min-width: 0;
       width: 100%;
       height: 35px;
@@ -56,10 +108,31 @@
         display: none;
       }
 
-      &.btn-gray {
-        background-color: #6b6b6b;
-        font-weight: 400;
-        color: $white;
+      &.btn-gray,
+      &.cky-btn-reject {
+        background-color: #6b6b6b !important;
+        font-weight: 400 !important;
+        color: $white !important;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &.cky-btn-customize {
+        display: none;
+      }
+
+      &.cky-btn-accept,
+      &.cky-btn-customize {
+        color: $black !important;
+        background-color: $primary !important;
+        border: none !important;
+
+        &:hover {
+          background-color: $white !important;
+          opacity: 1;
+        }
       }
 
       .txt2 {
@@ -69,8 +142,10 @@
   }
 
   @include media-breakpoint-up(sm) {
-    .buttons {
-      .btn {
+    .buttons,
+    .cky-notice-btn-wrapper {
+      .btn,
+      .cky-btn {
         width: 200px;
       }
     }
@@ -80,13 +155,20 @@
     padding: 30px 80px 30px 50px;
     border-radius: 18px;
 
-    .btn-close {
+    &.cky-box-bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    .btn-close,
+    .cky-banner-btn-close {
       top: 50%;
       right: 20px;
       transform: translateY(-50%);
     }
 
-    .inner {
+    .inner,
+    .cky-notice {
       display: flex;
       align-items: center;
       justify-content: space-between;

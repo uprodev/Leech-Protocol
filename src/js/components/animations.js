@@ -8,6 +8,11 @@ jQuery(document).ready(function ($) {
     var roadmapStage = document.querySelectorAll(".roadmap-stage-first");
     var roadmapLines = document.querySelectorAll(".roadmap-stage-first .roadmap-step");
     var roadmapLinesActive = document.querySelectorAll(".roadmap-step.active .roadmap-step-icon");
+    var color = "#b9ff1f";
+    if (document.querySelectorAll(".page-wrapper.theme-light").length) {
+      color = "#84bf00";
+    }
+
     if (roadmapLines) {
       gsap.to(roadmapLines, {
         scrollTrigger: {
@@ -33,8 +38,9 @@ jQuery(document).ready(function ($) {
         delay: delay,
         duration: 0.2,
         ease: "linear",
-        borderColor: "#b9ff1f",
-        opacity: 0.6,
+        borderColor: color,
+        backgroundColor: color,
+        opacity: 1,
         stagger: 0.2,
       });
     }
