@@ -31,18 +31,18 @@ if (document.getElementById("strategyLottie")) {
   });
 }
 
-if (document.getElementById("coinsLottie01")) {
-  LottieInteractivity.create({
-    player: "#coinsLottie01",
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 1],
-        type: "playOnce",
-      },
-    ],
-  });
-}
+// if (document.getElementById("coinsLottie01")) {
+//   LottieInteractivity.create({
+//     player: "#coinsLottie01",
+//     mode: "scroll",
+//     actions: [
+//       {
+//         visibility: [0, 1],
+//         type: "playOnce",
+//       },
+//     ],
+//   });
+// }
 
 if (document.getElementById("transferLottie")) {
   let l3 = document.getElementById("transferLottie");

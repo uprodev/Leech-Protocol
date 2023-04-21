@@ -1,5 +1,5 @@
 .block-technology {
-  padding: 60px 0 0;
+  padding: 60px 0 50px;
   position: relative;
 
   .container-fluid {
@@ -13,62 +13,185 @@
     font-size: 32px;
     line-height: 37px;
     margin: 0 0 12px;
-  }
 
-  p {
-    font-size: 16px;
-    line-height: 1.375;
-    opacity: 0.8;
-    text-align: center;
-    margin: 0;
+    & + p {
+      font-size: 16px;
+      line-height: 1.375;
+      opacity: 0.8;
+      text-align: center;
+      margin: 0;
+    }
   }
 
   .animation-mobile {
     position: relative;
-    max-width: 400px;
-    margin: auto;
+    margin: 46px auto 0;
+    max-width: 500px;
+
+    .t-box-connect-wrapper {
+      margin: 0 9px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .tech-svg {
+      position: absolute;
+      left: 0;
+      top: 83px;
+
+      &--right {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .coins-01,
+    .coins-02 {
+      .main {
+        display: block;
+      }
+    }
 
     .coins-01 {
-      position: absolute;
-      left: 48.5%;
-      top: 22vw;
-      width: 50%;
-      height: auto;
-      transform: translateX(-50%);
+      @include abs-center;
     }
 
     .coins-02 {
-      position: absolute;
-      left: 50%;
-      bottom: 50vw;
-      width: 50%;
-      height: auto;
-      transform: translateX(-50%);
+      @include abs-center;
+      top: 40%;
+    }
+
+    .t-box {
+      &.t-box-01 {
+        height: 174px;
+        margin: 0 26px 30px;
+        padding: 0 0 24px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 600;
+          color: $primary;
+          white-space: nowrap;
+          margin: 0;
+        }
+      }
+
+      &.t-box-trigger {
+        margin: 0 38px 16px;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        color: $primary;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        p {
+          margin: 0;
+        }
+
+        .line {
+          position: absolute;
+          left: 50%;
+          top: 100%;
+        }
+
+        &.active,
+        &:hover {
+          background-color: $primary;
+          border-color: $primary;
+          color: $black;
+        }
+
+        &.t-box-05 {
+          margin-bottom: 23px;
+        }
+      }
+
+      &.t-box-06 {
+        padding: 15px 13px 17px 15px;
+        margin: 0 13px;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          row-gap: 12px;
+
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: $white;
+
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 156px;
+              height: 64px;
+              background: rgba(0, 0, 0, 0.5);
+              border: 1px solid #25292c;
+              backdrop-filter: blur(32px);
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+
+      &.t-box-07 {
+        margin: 0 11px;
+        padding: 0 0 19px;
+        height: 174px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 600;
+          color: $primary;
+          margin: 0;
+          text-align: center;
+          br {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .t-box-06-connect {
+      text-align: center;
+      margin: -4px 0 -14px;
+      position: relative;
+      z-index: 5;
     }
 
     .btn {
-      position: absolute;
-      left: 0;
-      bottom: 0;
       width: 100%;
+      margin: 35px 0 0;
 
       img {
         margin-left: 15px;
-      }
-    }
-
-    @media (min-width: 432px) {
-      .coins-01 {
-        top: 110px;
-      }
-      .coins-02 {
-        bottom: 220px;
       }
     }
   }
 
   .animation-desktop {
     position: relative;
+    display: flex;
+    max-width: 1240px;
+    margin: auto;
 
     svg {
       display: block;
@@ -77,22 +200,207 @@
     }
 
     .coins-01 {
-      position: absolute;
-      left: 2.5%;
-      top: 17%;
+      @include abs-center;
     }
+
     .coins-02 {
-      position: absolute;
-      right: 7%;
-      top: 14%;
+      @include abs-center;
+      top: 40%;
+    }
+
+    .t-box-connect-01 {
+      width: 114px;
+      flex: 0 0 auto;
+      margin: 0 -4px;
+      position: relative;
+      z-index: 5;
+      padding: 32px 0 0;
+
+      .line {
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+      }
+    }
+
+    .t-box-change-d {
+      width: 40.3%;
+
+      &[data-box="t4d"] {
+        align-self: flex-end;
+        transform: translateY(5px);
+
+        .t-box {
+          padding: 15px;
+        }
+
+        &.active {
+          & + .t-box-03-d {
+            align-self: flex-end;
+            transform: translateY(5px);
+          }
+        }
+      }
+
+      .inner {
+        display: flex;
+      }
+
+      .t-box-connect {
+        width: 84px;
+        margin: 0 -4px;
+        position: relative;
+        z-index: 5;
+        flex: 0 0 auto;
+      }
+
+      .t-box-connect-03 {
+        position: relative;
+        top: 83px;
+        z-index: 5;
+        width: 100%;
+        margin: 0 -4px;
+        height: 100%;
+
+        .c-left {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 8px;
+          height: 8px;
+        }
+        .c-right {
+          position: absolute;
+          left: auto;
+          right: 0;
+          top: 0;
+          width: 8px;
+          height: 8px;
+        }
+        .line {
+          position: absolute;
+          left: 8px;
+          right: 8px;
+          top: 3px;
+          width: calc(100% - 16px);
+          height: 2px;
+        }
+      }
+
+      .t-box {
+        padding: 15px 15px 20px 15px;
+        width: 65%;
+        flex: 0 0 auto;
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          row-gap: 12px;
+
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: $white;
+
+            span {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 71%;
+              height: 64px;
+              background: rgba(0, 0, 0, 0.5);
+              border: 1px solid #25292c;
+              backdrop-filter: blur(32px);
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .t-box-trigger-wrapper {
+      width: 16.9%;
+    }
+
+    .t-box {
+      &.t-box-01-d,
+      &.t-box-03-d {
+        width: 17%;
+      }
+
+      &.t-box-01-d {
+        height: 174px;
+        padding: 0 0 24px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 600;
+          color: $primary;
+          margin: 0;
+        }
+      }
+
+      &.t-box-trigger-d {
+        margin: 0 0 12px;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        color: $primary;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        p {
+          margin: 0;
+        }
+
+        &.active,
+        &:hover {
+          background-color: $primary;
+          border-color: $primary;
+          color: $black;
+        }
+      }
+
+      &.t-box-03-d {
+        padding: 0 0 19px;
+        height: 174px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 600;
+          color: $primary;
+          margin: 0;
+          text-align: center;
+
+          br {
+            display: block;
+          }
+        }
+      }
     }
 
     .btn {
       position: absolute;
       left: 0;
-      bottom: 35%;
-      width: 16.5%;
+      top: 221px;
+      width: 17%;
       padding: 0;
+      border-radius: 24px;
 
       img {
         margin-left: 10px;
@@ -121,15 +429,15 @@
     h2 {
       font-size: 32px;
       margin: 0 0 31px;
-    }
 
-    p {
-      font-size: 18px;
-      line-height: 1.333;
-      margin: 0 0 4px;
+      & + p {
+        font-size: 18px;
+        line-height: 1.333;
+        margin: 0 0 4px;
 
-      br {
-        display: none;
+        br {
+          display: none;
+        }
       }
     }
 
@@ -139,22 +447,31 @@
     }
   }
 
+  @include media-breakpoint-up(lg) {
+    padding: 149px 0 70px;
+
+    h2 + p {
+      margin: 0 0 76px;
+    }
+  }
+
   @include media-breakpoint-up(xl) {
-    padding: 149px 0 106px;
-
     .animation-desktop {
-      margin: 0 -50px 0 0;
-
-      .btn {
-        bottom: 38%;
+      .t-box-change-d {
+        .t-box {
+          width: 56.4%;
+        }
       }
     }
   }
 }
 
-.tech-svg {
-  width: 100%;
-  height: auto;
+.t-box {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #25292c;
+  backdrop-filter: blur(32px);
+  border-radius: 20px;
+  position: relative;
 }
 
 .t-box-01,
@@ -229,7 +546,7 @@
   .c-right {
     opacity: 0;
   }
-  .line {
+  .line path {
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
   }

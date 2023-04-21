@@ -199,68 +199,6 @@ jQuery(document).ready(function ($) {
       $(this).find(".tooltip").remove();
     });
 
-  function accordion() {
-    if ($(window).width() < 1024) {
-      var activeAccBtn = $(".accordion button.active");
-      var activePanel = activeAccBtn.parent().next();
-      activePanel.show();
-      ScrollTrigger.refresh();
-    }
-
-    $(".accordion .accordion-header button").on("click", function () {
-      if (!$(this).hasClass("active")) {
-        $(".accordion .accordion-header button.active").parent().next().slideUp(300);
-        $(".accordion .accordion-header button.active").removeClass("active");
-        var nextPanel = $(this).parent().next(),
-          nextPanelId = $(this).parent().next().attr("id");
-        nextPanel.slideDown(300, function () {
-          ScrollTrigger.refresh();
-        });
-        $(this).addClass("active");
-
-        $(".tabs-nav .active").removeClass("active");
-        $(".tabs-nav a").each(function () {
-          if ($(this).attr("href") === "#" + nextPanelId) {
-            $(this).addClass("active");
-          }
-        });
-      }
-    });
-  }
-  accordion();
-
-  function tabs() {
-    if ($(window).width() >= 1024) {
-      var activeTabBtn = $(".tabs-nav .active");
-      var activePanel = $(activeTabBtn.attr("href"));
-      activePanel.show();
-      ScrollTrigger.refresh();
-    }
-
-    $(".tabs-nav a").on("click", function (e) {
-      e.preventDefault();
-      if (!$(this).hasClass("active")) {
-        var activePanel = $($(".tabs-nav .active").attr("href"));
-        activePanel.hide();
-        $(".tabs-nav .active").removeClass("active");
-        var nextPanel = $($(this).attr("href")),
-          nextPanelId = nextPanel.attr("id");
-        nextPanel.fadeIn(200, function () {
-          ScrollTrigger.refresh();
-        });
-        $(this).addClass("active");
-
-        $(".accordion .accordion-header button.active").removeClass("active");
-        $(".accordion .accordion-header button").each(function () {
-          if ($(this).attr("data-tab") === nextPanelId) {
-            $(this).addClass("active");
-          }
-        });
-      }
-    });
-  }
-  tabs();
-
   if (document.querySelector(".related-slider")) {
     var slider = document.querySelector(".related-slider");
     const swiper = new Swiper(slider, {

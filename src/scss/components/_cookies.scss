@@ -160,18 +160,72 @@
       left: 0;
     }
 
-    .btn-close,
-    .cky-banner-btn-close {
+    .btn-close {
       top: 50%;
       right: 20px;
       transform: translateY(-50%);
     }
 
-    .inner,
-    .cky-notice {
+    .cky-consent-bar {
+      .cky-banner-btn-close {
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+      }
+    }
+
+    .inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    .cky-notice .cky-title {
+      float: left;
+      max-width: 600px;
+    }
+
+    .cky-notice-group {
+      clear: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .cky-notice-des {
+        width: 100%;
+        max-width: 600px;
+
+        p {
+          margin: 0 !important;
+        }
+      }
+
+      .cky-notice-btn-wrapper {
+        margin: 0;
+        flex: 0 0 auto;
+        margin-left: 50px;
+
+        .cky-btn {
+          width: auto;
+          padding: 0 26px;
+
+          &.cky-btn-customize {
+            display: inline-flex;
+
+            &:before {
+              content: "";
+              background: url(../img/icons/ico-cookies.svg) 0 0 no-repeat;
+              width: 14px;
+              height: 15px;
+              margin-right: 6px;
+            }
+          }
+
+          &.cky-btn-accept {
+            display: none;
+          }
+        }
+      }
     }
 
     .text {
@@ -211,21 +265,26 @@
     padding: 52px 100px 52px 140px;
     background: $black url(../img/cookies.svg) 49px 50% no-repeat;
 
-    .btn-close {
+    .btn-close,
+    .cky-consent-bar .cky-banner-btn-close {
       right: 37px;
     }
 
-    h3 {
+    h3,
+    .cky-title {
       display: none;
     }
 
-    p {
+    p,
+    .cky-notice-group .cky-notice-des p {
       font-size: 16px;
       line-height: 1.667;
     }
 
-    .buttons {
-      .btn {
+    .buttons,
+    .cky-notice-btn-wrapper {
+      .btn,
+      .cky-btn {
         height: 54px;
         font-size: 16px;
 
@@ -241,16 +300,18 @@
   }
 
   @include media-breakpoint-up(xl) {
-    width: 1274px;
-    left: 50%;
+    width: 1274px !important;
+    left: 50% !important;
     right: auto;
     transform: translateX(-50%);
 
-    p {
+    p,
+    .cky-consent-bar .cky-notice-des p {
       font-size: 18px;
     }
 
-    .buttons {
+    .buttons,
+    .cky-notice-btn-wrapper {
       column-gap: 20px;
     }
   }

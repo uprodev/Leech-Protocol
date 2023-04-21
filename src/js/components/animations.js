@@ -48,6 +48,7 @@ jQuery(document).ready(function ($) {
 
   // technology
   if (document.querySelector(".block-technology")) {
+    let coins0 = document.getElementById("coinsLottie01");
     let coins1 = document.getElementById("coinsLottie02");
 
     const timeline = gsap
@@ -59,6 +60,9 @@ jQuery(document).ready(function ($) {
           toggleActions: "play resume resume resume",
           // scrub: true,
           // end: "bottom bottom",
+        },
+        onStart: function () {
+          coins0.play();
         },
         onComplete: function () {
           coins1.play();
@@ -277,7 +281,7 @@ jQuery(document).ready(function ($) {
         duration: 0.1,
       })
       .to(
-        ".t-box-connect-03 .line",
+        ".t-box-connect-03 .line path",
         {
           strokeDashoffset: 0,
           duration: 0.2,
