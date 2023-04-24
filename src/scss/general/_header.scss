@@ -47,7 +47,7 @@
       align-items: center;
       font-family: $ff-azeret;
       font-weight: 600;
-      font-size: 8.17035px;
+      font-size: 12px;
       line-height: 1;
       text-decoration: none;
 
@@ -62,8 +62,8 @@
     border: 1px solid var(--theme-rgba);
     border-radius: 100px;
     padding: 1px;
-    width: 55px;
-    height: 29px;
+    width: 61px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,8 +73,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 100%;
-      width: 25px;
-      height: 25px;
+      width: 28px;
+      height: 28px;
       border: 1px solid transparent;
 
       svg {
@@ -143,14 +143,6 @@
     }
   }
 
-  @include media-breakpoint-up(xs) {
-    .logo {
-      a {
-        font-size: 10px;
-      }
-    }
-  }
-
   @include media-breakpoint-up(lg) {
     .logo {
       width: 157px;
@@ -172,16 +164,6 @@
         img {
           margin: 4px 5px 0 0;
         }
-      }
-    }
-
-    .theme-switch {
-      width: 61px;
-      height: 32px;
-
-      a {
-        width: 28px;
-        height: 28px;
       }
     }
   }

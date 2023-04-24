@@ -10,27 +10,6 @@
     margin: 0 -12px 0 5px;
     position: relative;
 
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: #d2ff1f;
-      mix-blend-mode: color;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  .animation-box {
-    margin: 0 -12px 0 5px;
-
     img {
       display: block;
       width: 100%;
@@ -38,6 +17,10 @@
       height: auto;
       margin: auto;
     }
+  }
+
+  .animation-box {
+    margin: 0 -12px 0 5px;
   }
 
   p {
@@ -93,7 +76,8 @@
   }
 
   @include media-breakpoint-up(xl) {
-    .animation-box {
+    .animation-box,
+    .image {
       margin: 0 50px;
     }
     .text {
