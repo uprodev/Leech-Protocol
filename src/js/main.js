@@ -23,12 +23,12 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $(".main-navigation a").on("click", function (e) {
+  $(".home .main-navigation a").on("click", function (e) {
     var href = $(this).attr("href");
     console.log(href.indexOf("#"));
-    if (href.length > 1 && href.indexOf("#") === 0) {
+    if (href.length > 1 && href.indexOf("#") !== -1) {
       e.preventDefault();
-      var block = $(href);
+      var block = $(href.slice(1));
       if (block.length) {
         $(".header").removeClass("menu-opened");
         $(".navbar-toggler").removeClass("active");
@@ -298,7 +298,7 @@ jQuery(document).ready(function ($) {
     var slider = document.querySelector(".related-slider");
     const swiper = new Swiper(slider, {
       speed: 500,
-      loop: true,
+      loop: false,
       spaceBetween: 50,
       slidesPerView: 1,
       navigation: {
