@@ -3,8 +3,24 @@ jQuery(document).ready(function ($) {
     ScrollTrigger.refresh();
   });
 
-  // roadmap animations
+  // technology
+  let lottiePlayer1 = document.getElementById("transferLottie");
+  if ($(".block-technology-description .animation-box").length) {
+    var techLottieContainers = document.querySelectorAll(".block-technology-description .animation-box");
+    techLottieContainers.forEach((container) => {
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top center",
+        onEnter: function () {
+          var lottiePlayer = container.querySelector("lottie-player");
+          lottiePlayer.play();
+        },
+      });
+    });
+  }
+
   if (document.querySelector(".block-roadmap")) {
+    // roadmap animations
     var roadmapStage = document.querySelectorAll(".roadmap-stage-first");
     var roadmapLines = document.querySelectorAll(".roadmap-stage-first .roadmap-step");
     var roadmapLinesActive = document.querySelectorAll(".roadmap-step.active .roadmap-step-icon");

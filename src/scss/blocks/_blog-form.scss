@@ -102,6 +102,10 @@
       color: #bafb1e;
       min-width: 0;
       padding: 0 26px;
+
+      &:hover {
+        color: $white;
+      }
     }
 
     .note {

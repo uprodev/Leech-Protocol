@@ -50,16 +50,16 @@ if (document.getElementById("transferLottie")) {
     ScrollTrigger.refresh();
   });
 
-  LottieInteractivity.create({
-    player: "#transferLottie",
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 1.0],
-        type: "playOnce",
-      },
-    ],
-  });
+  // LottieInteractivity.create({
+  //   player: "#transferLottie",
+  //   mode: "scroll",
+  //   actions: [
+  //     {
+  //       visibility: [0, 0.1],
+  //       type: "playOnce",
+  //     },
+  //   ],
+  // });
 }
 
 if (document.getElementById("protocolLottie")) {
@@ -68,16 +68,16 @@ if (document.getElementById("protocolLottie")) {
     ScrollTrigger.refresh();
   });
 
-  LottieInteractivity.create({
-    player: "#protocolLottie",
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 1.0],
-        type: "playOnce",
-      },
-    ],
-  });
+  // LottieInteractivity.create({
+  //   player: "#protocolLottie",
+  //   mode: "scroll",
+  //   actions: [
+  //     {
+  //       visibility: [0, 1.0],
+  //       type: "playOnce",
+  //     },
+  //   ],
+  // });
 }
 
 if (document.getElementById("joinLottie")) {

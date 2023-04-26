@@ -55,9 +55,10 @@
   }
 
   @include media-breakpoint-up(lg) {
-    padding-bottom: 150px;
+    padding-bottom: 50px;
 
     .text {
+      padding: 100px 0;
       p {
         max-width: 400px;
         margin: 65px 0 55px;
@@ -76,12 +77,14 @@
   }
 
   @include media-breakpoint-up(xl) {
+    padding-bottom: 24px;
+
     .animation-box,
     .image {
       margin: 0 50px;
     }
     .text {
-      padding: 126px 0 0;
+      padding: 126px 0;
 
       .btn {
         margin-right: 74px;
