@@ -12,7 +12,7 @@ if (document.getElementById("bannerLottie")) {
   });
 }
 
-if (document.querySelector("blockchainLottie")) {
+if (document.querySelector("#blockchainLottie1")) {
   let l11 = document.getElementById("blockchainLottie1");
   l11.addEventListener("ready", () => {
     ScrollTrigger.refresh();
@@ -21,6 +21,18 @@ if (document.querySelector("blockchainLottie")) {
   let l12 = document.getElementById("blockchainLottie2");
   l12.addEventListener("ready", () => {
     ScrollTrigger.refresh();
+  });
+
+  LottieInteractivity.create({
+    player: "#blockchainLottie2",
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 1],
+        type: "loop",
+        frames: [107, 287],
+      },
+    ],
   });
 }
 
