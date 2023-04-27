@@ -12,7 +12,7 @@ if (document.getElementById("bannerLottie")) {
   });
 }
 
-if (document.querySelector("#blockchainLottie1")) {
+if (document.querySelector(".blockchainLottie")) {
   let l11 = document.getElementById("blockchainLottie1");
   l11.addEventListener("ready", () => {
     ScrollTrigger.refresh();
@@ -23,16 +23,28 @@ if (document.querySelector("#blockchainLottie1")) {
     ScrollTrigger.refresh();
   });
 
-  LottieInteractivity.create({
-    player: "#blockchainLottie2",
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 1],
-        type: "loop",
-        frames: [107, 287],
-      },
-    ],
+  ScrollTrigger.create({
+    trigger: l12,
+    start: "top center",
+    onEnter: function () {
+      l11.play();
+      LottieInteractivity.create({
+        player: "#blockchainLottie2",
+        mode: "chain",
+        actions: [
+          {
+            state: "autoplay",
+            transition: "onComplete",
+            frames: [0, 109],
+          },
+          {
+            state: "loop",
+
+            frames: [110, 290],
+          },
+        ],
+      });
+    },
   });
 }
 
