@@ -108,6 +108,18 @@
       --bs-gutter-y: 60px;
     }
 
+    .card-logo {
+      span {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      &:hover {
+        span {
+          opacity: 1;
+        }
+      }
+    }
+
     &--col-4-1 {
       .card-logo {
         figure {
@@ -117,19 +129,11 @@
         span {
           font-size: 16px;
           display: inline-flex;
-          opacity: 0;
-          transition: opacity 0.2s;
 
           &:after {
             width: 12px;
             height: 12px;
             margin-left: 20px;
-          }
-        }
-
-        &:hover {
-          span {
-            opacity: 1;
           }
         }
       }

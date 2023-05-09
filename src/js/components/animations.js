@@ -1,21 +1,32 @@
 jQuery(document).ready(function ($) {
-  imagesLoaded("body", function () {
-    ScrollTrigger.refresh();
-  });
-
   // technology
-  let lottiePlayer1 = document.getElementById("transferLottie");
   if ($(".block-technology-description .animation-box").length) {
-    var techLottieContainers = document.querySelectorAll(".block-technology-description .animation-box");
-    techLottieContainers.forEach((container) => {
-      ScrollTrigger.create({
-        trigger: container,
-        start: "top center",
-        onEnter: function () {
-          var lottiePlayer = container.querySelector("lottie-player");
-          lottiePlayer.play();
-        },
-      });
+    // var techLottieContainers = document.querySelectorAll(".block-technology-description .animation-box");
+    // techLottieContainers.forEach((container) => {
+    //   ScrollTrigger.create({
+    //     trigger: container,
+    //     start: "top center",
+    //     onEnter: function () {
+    //       var lottiePlayer = container.querySelector("lottie-player");
+    //       lottiePlayer.play();
+    //     },
+    //   });
+    // });
+    ScrollTrigger.create({
+      trigger: "#transferLottie",
+      start: "top center",
+      onEnter: function () {
+        var lottiePlayer = document.getElementById("transferLottie");
+        lottiePlayer.play();
+      },
+    });
+    ScrollTrigger.create({
+      trigger: "#protocolLottie",
+      start: "top center",
+      onEnter: function () {
+        var lottiePlayer = document.getElementById("protocolLottie");
+        lottiePlayer.play();
+      },
     });
   }
 
@@ -357,4 +368,8 @@ jQuery(document).ready(function ($) {
       pin: share,
     });
   }
+
+  imagesLoaded("body", function () {
+    ScrollTrigger.refresh();
+  });
 });

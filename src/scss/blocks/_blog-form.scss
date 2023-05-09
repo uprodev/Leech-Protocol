@@ -86,7 +86,7 @@
       line-height: 26px;
       outline: none;
       box-shadow: none;
-      @include placeholder-text($black, 1);
+      @include placeholder-text($black, 0.5);
 
       &:focus {
         outline: none;
@@ -155,7 +155,6 @@
 
       input {
         height: 46px;
-        @include placeholder-text($black, 0.5);
       }
 
       .btn {
