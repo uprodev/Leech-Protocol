@@ -37,12 +37,12 @@
     transition: all 0.2s;
 
     svg {
-      content: "";
       display: block;
       width: 11px;
       height: 10px;
       margin-left: 13px;
       transition: transform 0.2s;
+      flex: 0 0 auto;
 
       path {
         transition: transform 0.2s;

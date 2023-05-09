@@ -35,7 +35,7 @@
           height: 46px;
           font-family: $ff-modernist;
           font-weight: 700;
-          font-size: 12px;
+          font-size: 14px;
           line-height: 14px;
           color: var(--highlight-color);
         }
@@ -177,6 +177,7 @@
             padding: 0;
             width: 163px;
             transition: all 0.2s;
+            font-size: 16px;
           }
 
           input {
