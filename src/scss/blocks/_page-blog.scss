@@ -142,13 +142,6 @@
     padding: 15px 0 45px;
   }
 
-  .blog-list .item {
-    column-gap: 4vw;
-    .item-image a {
-      padding: 100% 0 0;
-    }
-  }
-
   @include media-breakpoint-up(lg) {
     .blog-page-header {
       padding: 91px 0 0;

@@ -12,6 +12,7 @@
 
         img {
           @include img-abs;
+          object-fit: contain;
         }
       }
     }
