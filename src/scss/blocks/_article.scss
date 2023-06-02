@@ -1,6 +1,11 @@
 .article {
   padding: 70px 0 80px;
 
+  .wp-block-embed iframe {
+    display: block;
+    margin: auto;
+  }
+
   .article-header {
     color: var(--highlight-color);
     margin: 0 0 24px;
@@ -55,11 +60,10 @@
     figure {
       margin: 0;
       position: relative;
-      padding: 72.57% 0 0;
     }
 
     img {
-      @include img-abs;
+      @include img-fit;
     }
   }
 
@@ -76,6 +80,14 @@
       line-height: 1.86;
       margin: 0;
       letter-spacing: 0.015em;
+
+      a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     ul {
@@ -443,12 +455,6 @@
   }
 
   @include media-breakpoint-up(md) {
-    .article-featured-image {
-      figure {
-        padding: 50.73% 0 0;
-      }
-    }
-
     .article-info {
       .tag-list {
         flex-direction: row;
